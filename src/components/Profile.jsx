@@ -3,6 +3,7 @@ import {
   Wrapper,
   WrapperStatusCount,
   WrapperUsername,
+  WrapperGeneric,
   WrapperInfoUser,
   WrapperImage,
 } from './styled';
@@ -11,12 +12,15 @@ import useGithub from '../hooks/useGithub';
 const Profile = () => {
   const { githubState } = useGithub();
 
+  React.useEffect(() => {
+    console.log(githubState.user);
+  }, [githubState.user]);
+
   return (
     <Wrapper>
-      <WrapperImage
-        src="https://avatars.githubusercontent.com/u/55158261?v=4"
-        alt="Picture of User"
-      />
+      {githubState.user.avatar_url && (
+        <WrapperImage src={githubState.user.avatar_url} alt="Avatar of User" />
+      )}
       <WrapperInfoUser>
         <div>
           <h1>{githubState.user.name}</h1>
@@ -30,6 +34,22 @@ const Profile = () => {
               {githubState.user.login}
             </a>
           </WrapperUsername>
+          {githubState.user.company && (
+            <WrapperGeneric>
+              <h3>Company: </h3>
+              <span> {githubState.user.company}</span>
+            </WrapperGeneric>
+          )}
+          {githubState.user.blog && (
+            <WrapperGeneric>
+              <h3>Blog: </h3>
+              <span> {githubState.user.blog}</span>
+            </WrapperGeneric>
+          )}
+          <WrapperGeneric>
+            <h3>Location: </h3>
+            <span> {githubState.user.location}</span>
+          </WrapperGeneric>
         </div>
         <WrapperStatusCount>
           <div>

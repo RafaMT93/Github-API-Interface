@@ -18,7 +18,9 @@ const Header = () => {
         placeholder="Enter the username for search..."
         onChange={({ target }) => setUsernameForSearch(target.value)}
       />
-      <button type="submit">SEARCH</button>
+      <button type="submit" onClick={submitGetUser}>
+        SEARCH
+      </button>
     </WrapperHeader>
   );
 };

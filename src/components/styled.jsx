@@ -49,6 +49,23 @@ export const WrapperUsername = styled.div`
   }
 `;
 
+export const WrapperGeneric = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+
+  h3 {
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+
+  a {
+    font-size: 1.125rem;
+    color: blue;
+    font-weight: bold;
+  }
+`;
+
 export const WrapperImage = styled.img`
   border-radius: 50%;
   width: 12.5rem;
