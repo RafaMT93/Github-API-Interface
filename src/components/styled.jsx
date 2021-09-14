@@ -170,3 +170,9 @@ export const WrapperHeader = styled.div`
     }
   }
 `;
+
+//NoSearch.jsx
+
+export const WrapperNoSearch = styled.div`
+  margin: auto;
+`;

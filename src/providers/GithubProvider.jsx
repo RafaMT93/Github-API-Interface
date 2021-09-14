@@ -10,6 +10,7 @@ export const GithubContext = React.createContext({
 
 const GithubProvider = ({ children }) => {
   const [githubState, setGithubState] = React.useState({
+    hasUser: false,
     loading: false,
     user: {
       login: undefined,
@@ -29,24 +30,32 @@ const GithubProvider = ({ children }) => {
   });
 
   const getUser = (username) => {
-    API.get(`users/${username}`).then(({ data }) =>
-      setGithubState((prevState) => ({
-        ...prevState,
-        user: {
-          login: data.login,
-          name: data.name,
-          avatar_url: data.avatar_url,
-          html_url: data.html_url,
-          blog: data.blog,
-          company: data.company,
-          location: data.location,
-          followers: data.followers,
-          following: data.following,
-          public_gists: data.public_gists,
-          public_repos: data.public_repos,
-        },
-      })),
-    );
+    API.get(`users/${username}`)
+      .then(({ data }) =>
+        setGithubState((prevState) => ({
+          ...prevState,
+          hasUser: true,
+          user: {
+            login: data.login,
+            name: data.name,
+            avatar_url: data.avatar_url,
+            html_url: data.html_url,
+            blog: data.blog,
+            company: data.company,
+            location: data.location,
+            followers: data.followers,
+            following: data.following,
+            public_gists: data.public_gists,
+            public_repos: data.public_repos,
+          },
+        })),
+      )
+      .finally(() => {
+        setGithubState((prevState) => ({
+          ...prevState,
+          loading: !prevState.loading,
+        }));
+      });
   };
 
   const contextValue = {
