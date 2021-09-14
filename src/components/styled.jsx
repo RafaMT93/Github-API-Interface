@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
 
 //Profile.jsx
 
@@ -55,3 +56,13 @@ export const WrapperImage = styled.img`
 export const WrapperLayout = styled.section`
   margin: 1rem;
 `;
+
+//Repositories.jsx
+
+export const WrapperTab = styled(Tab)``;
+
+export const WrapperTabs = styled(Tabs)``;
+
+export const WrapperTabList = styled(TabList)``;
+
+export const WrapperTabPanel = styled(TabPanel)``;
