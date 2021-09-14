@@ -174,5 +174,12 @@ export const WrapperHeader = styled.div`
 //NoSearch.jsx
 
 export const WrapperNoSearch = styled.div`
-  margin: auto;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-weight: bold;
+    font-size: 2rem;
+  }
 `;
