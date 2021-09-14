@@ -13,7 +13,9 @@ export const WrapperInfoUser = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  heigth: auto;
+  heigth: 0.5rem;
+  height: 12.5rem;
+
   h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -23,6 +25,7 @@ export const WrapperInfoUser = styled.div`
 export const WrapperStatusCount = styled.div`
   display: flex;
   align-items: center;
+
   div {
     margin: 0.5rem;
     text-align: center;
@@ -32,11 +35,13 @@ export const WrapperStatusCount = styled.div`
 export const WrapperUsername = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+
   h3 {
     margin-right: 0.5rem;
     font-weight: bold;
   }
+
   a {
     font-size: 1.125rem;
     color: blue;
@@ -59,10 +64,56 @@ export const WrapperLayout = styled.section`
 
 //Repositories.jsx
 
-export const WrapperTab = styled(Tab)``;
+export const WrapperTab = styled(Tab)`
+  border-radius: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  user-selected: none;
+  cursor: pointer;
+  transition: 0.5s ease;
+  z-index: 99999;
+  background-color: #fff;
+  margin: 0.5rem;
 
-export const WrapperTabs = styled(Tabs)``;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1em #ccc;
+  }
 
-export const WrapperTabList = styled(TabList)``;
+  &:hover {
+    background-color: #ccc;
+    color: #333;
+    border: 1px solid #333;
+  }
 
-export const WrapperTabPanel = styled(TabPanel)``;
+  &.is-selected {
+    box-shadow: 8px 3px 8px rgba(0, 0, 0, 0.5);
+  }
+`;
+WrapperTab.tabsRole = 'Tab';
+
+export const WrapperTabs = styled(Tabs)`
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+`;
+
+export const WrapperTabList = styled(TabList)`
+  list-style-type: none;
+  padding: 0.25rem;
+  display: flex;
+  margin: 0;
+`;
+WrapperTabList.tabsRole = 'TabList';
+
+export const WrapperTabPanel = styled(TabPanel)`
+  display: none;
+  padding: 1rem;
+  min-heigth: 40vh;
+
+  &.is-selected {
+    display: block;
+  }
+`;
+WrapperTabPanel.tabsRole = 'TabPanel';
