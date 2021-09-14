@@ -1,9 +1,10 @@
+import React from 'react';
 import { GithubContext } from '../providers/GithubProvider';
 
 const useGithub = () => {
-  const { githubState } = useContext(GithubContext);
+  const { githubState, getUser } = React.useContext(GithubContext);
 
-  return { githubState };
+  return { githubState, getUser };
 };
 
 export default useGithub;
