@@ -1,6 +1,47 @@
 import styled from 'styled-components';
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
 
+//Header.jsx
+
+export const WrapperHeader = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.25rem;
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 2.75rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    font-weight: 500;
+  }
+
+  button {
+    background-color: #225ed8;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: 0.5s ease;
+    font-size: 1rem;
+    color: #fff;
+
+    &:hover {
+      background-color: #225ed9;
+      color: #333;
+      box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+`;
+
+//Layout.jsx
+
+export const WrapperLayout = styled.section`
+  margin: 1rem;
+`;
 //Profile.jsx
 
 export const Wrapper = styled.div`
@@ -73,12 +114,6 @@ export const WrapperImage = styled.img`
   margin: 0.5rem;
 `;
 
-//Layout.jsx
-
-export const WrapperLayout = styled.section`
-  margin: 1rem;
-`;
-
 //Repositories.jsx
 
 export const WrapperTab = styled(Tab)`
@@ -135,40 +170,43 @@ export const WrapperTabPanel = styled(TabPanel)`
 `;
 WrapperTabPanel.tabsRole = 'TabPanel';
 
-//Header.jsx
-
-export const WrapperHeader = styled.div`
+export const WrapperList = styled.div`
   display: flex;
-  width: 100%;
   justify-content: space-between;
-  padding: 0.25rem;
+  flex-wrap: wrap;
+`;
 
-  input {
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-    width: 100%;
-    height: 2.75rem;
-    margin-right: 0.5rem;
-    padding: 0.5rem;
-    font-weight: 500;
-  }
+//RepositoryItem.jsx
 
-  button {
-    background-color: #225ed8;
-    padding: 0.5rem 1rem;
-    margin: 0 1rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    transition: 0.5s ease;
-    font-size: 1rem;
-    color: #fff;
+export const WrapperRepositoryItem = styled.div`
+  border: 1px solid #ccc;
+  margin: 1rem 1rem;
+  border-radius: 0.5rem;
+  width: 25rem;
+  height: 12.5rem;
+  padding: 0.5rem;
+  align-content: center;
+`;
 
-    &:hover {
-      background-color: #225ed9;
-      color: #333;
-      box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.5);
-    }
-  }
+export const WrapperRepositoryTitle = styled.h2`
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+`;
+
+export const WrapperRepositoryInfo = styled.h2`
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #2d3748;
+`;
+
+export const WrapperRepositoryLink = styled.a`
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #3182ce;
+  cursor: pointer;
 `;
 
 //NoSearch.jsx

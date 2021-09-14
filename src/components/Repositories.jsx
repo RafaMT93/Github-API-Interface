@@ -4,6 +4,7 @@ import {
   WrapperTabs,
   WrapperTabList,
   WrapperTabPanel,
+  WrapperList,
 } from './styled';
 import RepositoryItem from './RepositoryItem';
 import useGithub from '../hooks/useGithub';
@@ -38,28 +39,28 @@ const Repositories = () => {
             <WrapperTab>Starred</WrapperTab>
           </WrapperTabList>
           <WrapperTabPanel>
-            <WrapperTabList>
+            <WrapperList>
               {githubState.repositories.map((item) => (
                 <RepositoryItem
                   key={item.id}
                   name={item.name}
-                  linkToRepo={item.url}
+                  linkToRepo={item.svn_url}
                   fullName={item.full_name}
                 />
               ))}
-            </WrapperTabList>
+            </WrapperList>
           </WrapperTabPanel>
           <WrapperTabPanel>
-            <WrapperTabList>
+            <WrapperList>
               {githubState.starred.map((item) => (
                 <RepositoryItem
                   key={item.id}
                   name={item.name}
-                  linkToRepo={item.url}
+                  linkToRepo={item.svn_url}
                   fullName={item.full_name}
                 />
               ))}
-            </WrapperTabList>
+            </WrapperList>
           </WrapperTabPanel>
         </WrapperTabs>
       ) : (
