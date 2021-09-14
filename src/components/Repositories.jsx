@@ -5,6 +5,7 @@ import {
   WrapperTabList,
   WrapperTabPanel,
 } from './styled';
+import RepositoryItem from './RepositoryItem';
 
 const Repositories = () => {
   return (
@@ -16,8 +17,12 @@ const Repositories = () => {
         <WrapperTab>Repositories</WrapperTab>
         <WrapperTab>Starred</WrapperTab>
       </WrapperTabList>
-      <WrapperTabPanel>Panel Repositories</WrapperTabPanel>
-      <WrapperTabPanel>Panel Starred</WrapperTabPanel>
+      <WrapperTabPanel>
+        <RepositoryItem name="" linkToRepo="" fullName="" />
+      </WrapperTabPanel>
+      <WrapperTabPanel>
+        <RepositoryItem name="" linkToRepo="" fullName="" />
+      </WrapperTabPanel>
     </WrapperTabs>
   );
 };
